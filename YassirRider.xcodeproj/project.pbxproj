@@ -1,0 +1,659 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		048ABE752B9706DD007D3682 /* YassirRiderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABE742B9706DD007D3682 /* YassirRiderApp.swift */; };
+		048ABE772B9706DD007D3682 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABE762B9706DD007D3682 /* ContentView.swift */; };
+		048ABE792B9706E1007D3682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048ABE782B9706E1007D3682 /* Assets.xcassets */; };
+		048ABE7C2B9706E1007D3682 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048ABE7B2B9706E1007D3682 /* Preview Assets.xcassets */; };
+		048ABE872B970786007D3682 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 048ABE862B970786007D3682 /* Realm */; };
+		048ABE892B970786007D3682 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 048ABE882B970786007D3682 /* RealmSwift */; };
+		048ABE8C2B9707F6007D3682 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 048ABE8B2B9707F6007D3682 /* GoogleMaps */; };
+		048ABE8E2B9707F6007D3682 /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = 048ABE8D2B9707F6007D3682 /* GoogleMapsBase */; };
+		048ABE902B9707F6007D3682 /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 048ABE8F2B9707F6007D3682 /* GoogleMapsCore */; };
+		048ABE922B9707F6007D3682 /* GoogleMapsM4B in Frameworks */ = {isa = PBXBuildFile; productRef = 048ABE912B9707F6007D3682 /* GoogleMapsM4B */; };
+		048ABE9C2B970858007D3682 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABE982B970857007D3682 /* Text.swift */; };
+		048ABE9D2B970858007D3682 /* UIAplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABE992B970857007D3682 /* UIAplication.swift */; };
+		048ABE9E2B970858007D3682 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABE9A2B970857007D3682 /* Color.swift */; };
+		048ABE9F2B970858007D3682 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABE9B2B970858007D3682 /* Font.swift */; };
+		048ABEA52B9708A0007D3682 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABEA42B9708A0007D3682 /* LocationManager.swift */; };
+		048ABEAB2B9708E8007D3682 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABEA72B9708E8007D3682 /* BackButton.swift */; };
+		048ABEAD2B9708E8007D3682 /* CircleBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABEA92B9708E8007D3682 /* CircleBButton.swift */; };
+		048ABEAE2B9708E8007D3682 /* YassirButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABEAA2B9708E8007D3682 /* YassirButton.swift */; };
+		048ABEB42B970CA7007D3682 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABEB32B970CA7007D3682 /* LoginScreen.swift */; };
+		048ABEB62B970CD0007D3682 /* LoginScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABEB52B970CD0007D3682 /* LoginScreenModel.swift */; };
+		048ABEB92B970F69007D3682 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABEB82B970F69007D3682 /* HomeScreen.swift */; };
+		048ABEBB2B970F74007D3682 /* HomeScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABEBA2B970F74007D3682 /* HomeScreenModel.swift */; };
+		048ABEBD2B970FAF007D3682 /* HomeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABEBC2B970FAF007D3682 /* HomeMapView.swift */; };
+		048ABEC12B97109B007D3682 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABEBF2B97109A007D3682 /* MapViewController.swift */; };
+		048ABEC22B97109B007D3682 /* MapViewControllerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABEC02B97109B007D3682 /* MapViewControllerBridge.swift */; };
+		048ABECC2B97137F007D3682 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 048ABEC52B97137F007D3682 /* style.json */; };
+		048ABECD2B97137F007D3682 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 048ABEC72B97137F007D3682 /* Rubik-Bold.ttf */; };
+		048ABECE2B97137F007D3682 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 048ABEC82B97137F007D3682 /* Rubik-Medium.ttf */; };
+		048ABECF2B97137F007D3682 /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 048ABEC92B97137F007D3682 /* Rubik-SemiBold.ttf */; };
+		048ABED02B97137F007D3682 /* Rubik-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 048ABECA2B97137F007D3682 /* Rubik-ExtraBold.ttf */; };
+		048ABED12B97137F007D3682 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 048ABECB2B97137F007D3682 /* Rubik-Regular.ttf */; };
+		048ABED32B971546007D3682 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABED22B971546007D3682 /* AppDelegate.swift */; };
+		049E8CD82B971EFA00A61127 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CD72B971EFA00A61127 /* RealmManager.swift */; };
+		049E8CDA2B971F1F00A61127 /* Rider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CD92B971F1F00A61127 /* Rider.swift */; };
+		049E8CDC2B97203600A61127 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CDB2B97203600A61127 /* AppConfig.swift */; };
+		049E8CDE2B97205C00A61127 /* AtlasConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 049E8CDD2B97205B00A61127 /* AtlasConfig.plist */; };
+		049E8CE02B9722A600A61127 /* RealmCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CDF2B9722A600A61127 /* RealmCoordinatorView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		048ABE712B9706DD007D3682 /* YassirRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YassirRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		048ABE742B9706DD007D3682 /* YassirRiderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YassirRiderApp.swift; sourceTree = "<group>"; };
+		048ABE762B9706DD007D3682 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		048ABE782B9706E1007D3682 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		048ABE7B2B9706E1007D3682 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		048ABE982B970857007D3682 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		048ABE992B970857007D3682 /* UIAplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAplication.swift; sourceTree = "<group>"; };
+		048ABE9A2B970857007D3682 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		048ABE9B2B970858007D3682 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		048ABEA42B9708A0007D3682 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		048ABEA72B9708E8007D3682 /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		048ABEA92B9708E8007D3682 /* CircleBButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleBButton.swift; sourceTree = "<group>"; };
+		048ABEAA2B9708E8007D3682 /* YassirButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YassirButton.swift; sourceTree = "<group>"; };
+		048ABEB32B970CA7007D3682 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		048ABEB52B970CD0007D3682 /* LoginScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenModel.swift; sourceTree = "<group>"; };
+		048ABEB82B970F69007D3682 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		048ABEBA2B970F74007D3682 /* HomeScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenModel.swift; sourceTree = "<group>"; };
+		048ABEBC2B970FAF007D3682 /* HomeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapView.swift; sourceTree = "<group>"; };
+		048ABEBF2B97109A007D3682 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		048ABEC02B97109B007D3682 /* MapViewControllerBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewControllerBridge.swift; sourceTree = "<group>"; };
+		048ABEC32B9711F5007D3682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		048ABEC52B97137F007D3682 /* style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
+		048ABEC72B97137F007D3682 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		048ABEC82B97137F007D3682 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		048ABEC92B97137F007D3682 /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
+		048ABECA2B97137F007D3682 /* Rubik-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-ExtraBold.ttf"; sourceTree = "<group>"; };
+		048ABECB2B97137F007D3682 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		048ABED22B971546007D3682 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		049E8CD72B971EFA00A61127 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		049E8CD92B971F1F00A61127 /* Rider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rider.swift; sourceTree = "<group>"; };
+		049E8CDB2B97203600A61127 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		049E8CDD2B97205B00A61127 /* AtlasConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AtlasConfig.plist; sourceTree = "<group>"; };
+		049E8CDF2B9722A600A61127 /* RealmCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCoordinatorView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		048ABE6E2B9706DD007D3682 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				048ABE922B9707F6007D3682 /* GoogleMapsM4B in Frameworks */,
+				048ABE902B9707F6007D3682 /* GoogleMapsCore in Frameworks */,
+				048ABE892B970786007D3682 /* RealmSwift in Frameworks */,
+				048ABE872B970786007D3682 /* Realm in Frameworks */,
+				048ABE8C2B9707F6007D3682 /* GoogleMaps in Frameworks */,
+				048ABE8E2B9707F6007D3682 /* GoogleMapsBase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		048ABE682B9706DD007D3682 = {
+			isa = PBXGroup;
+			children = (
+				048ABE732B9706DD007D3682 /* YassirRider */,
+				048ABE722B9706DD007D3682 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		048ABE722B9706DD007D3682 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				048ABE712B9706DD007D3682 /* YassirRider.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		048ABE732B9706DD007D3682 /* YassirRider */ = {
+			isa = PBXGroup;
+			children = (
+				048ABEC32B9711F5007D3682 /* Info.plist */,
+				049E8CDD2B97205B00A61127 /* AtlasConfig.plist */,
+				048ABE742B9706DD007D3682 /* YassirRiderApp.swift */,
+				048ABED22B971546007D3682 /* AppDelegate.swift */,
+				048ABEAF2B970BCB007D3682 /* Main */,
+				048ABEA62B9708C4007D3682 /* Components */,
+				048ABE972B97082E007D3682 /* Extensions */,
+				048ABE962B970828007D3682 /* Ressources */,
+				048ABE952B970821007D3682 /* Screens */,
+				048ABE932B970808007D3682 /* Services */,
+				048ABE782B9706E1007D3682 /* Assets.xcassets */,
+				048ABE7A2B9706E1007D3682 /* Preview Content */,
+			);
+			path = YassirRider;
+			sourceTree = "<group>";
+		};
+		048ABE7A2B9706E1007D3682 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				048ABE7B2B9706E1007D3682 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		048ABE822B970706007D3682 /* RealmManager */ = {
+			isa = PBXGroup;
+			children = (
+				048ABE842B97072B007D3682 /* Models */,
+				048ABE832B970725007D3682 /* Service */,
+				049E8CDB2B97203600A61127 /* AppConfig.swift */,
+			);
+			path = RealmManager;
+			sourceTree = "<group>";
+		};
+		048ABE832B970725007D3682 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				049E8CD72B971EFA00A61127 /* RealmManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		048ABE842B97072B007D3682 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				049E8CD92B971F1F00A61127 /* Rider.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		048ABE932B970808007D3682 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				048ABE942B970815007D3682 /* LocationManager */,
+				048ABE822B970706007D3682 /* RealmManager */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		048ABE942B970815007D3682 /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				048ABEA42B9708A0007D3682 /* LocationManager.swift */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		048ABE952B970821007D3682 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				048ABE762B9706DD007D3682 /* ContentView.swift */,
+				049E8CDF2B9722A600A61127 /* RealmCoordinatorView.swift */,
+				048ABEB72B970F5A007D3682 /* Home */,
+				048ABEB22B970C91007D3682 /* Login */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		048ABE962B970828007D3682 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				048ABEC62B97137F007D3682 /* Font */,
+				048ABEC42B97137F007D3682 /* MapStyle */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		048ABE972B97082E007D3682 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				048ABE9A2B970857007D3682 /* Color.swift */,
+				048ABE9B2B970858007D3682 /* Font.swift */,
+				048ABE982B970857007D3682 /* Text.swift */,
+				048ABE992B970857007D3682 /* UIAplication.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		048ABEA62B9708C4007D3682 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				048ABEBE2B971052007D3682 /* MapView */,
+				048ABEA72B9708E8007D3682 /* BackButton.swift */,
+				048ABEAA2B9708E8007D3682 /* YassirButton.swift */,
+				048ABEA92B9708E8007D3682 /* CircleBButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		048ABEAF2B970BCB007D3682 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		048ABEB22B970C91007D3682 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				048ABEB32B970CA7007D3682 /* LoginScreen.swift */,
+				048ABEB52B970CD0007D3682 /* LoginScreenModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		048ABEB72B970F5A007D3682 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				048ABEB82B970F69007D3682 /* HomeScreen.swift */,
+				048ABEBA2B970F74007D3682 /* HomeScreenModel.swift */,
+				048ABEBC2B970FAF007D3682 /* HomeMapView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		048ABEBE2B971052007D3682 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				048ABEBF2B97109A007D3682 /* MapViewController.swift */,
+				048ABEC02B97109B007D3682 /* MapViewControllerBridge.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		048ABEC42B97137F007D3682 /* MapStyle */ = {
+			isa = PBXGroup;
+			children = (
+				048ABEC52B97137F007D3682 /* style.json */,
+			);
+			path = MapStyle;
+			sourceTree = "<group>";
+		};
+		048ABEC62B97137F007D3682 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				048ABEC72B97137F007D3682 /* Rubik-Bold.ttf */,
+				048ABEC82B97137F007D3682 /* Rubik-Medium.ttf */,
+				048ABEC92B97137F007D3682 /* Rubik-SemiBold.ttf */,
+				048ABECA2B97137F007D3682 /* Rubik-ExtraBold.ttf */,
+				048ABECB2B97137F007D3682 /* Rubik-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		048ABE702B9706DD007D3682 /* YassirRider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 048ABE7F2B9706E1007D3682 /* Build configuration list for PBXNativeTarget "YassirRider" */;
+			buildPhases = (
+				048ABE6D2B9706DD007D3682 /* Sources */,
+				048ABE6E2B9706DD007D3682 /* Frameworks */,
+				048ABE6F2B9706DD007D3682 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YassirRider;
+			packageProductDependencies = (
+				048ABE862B970786007D3682 /* Realm */,
+				048ABE882B970786007D3682 /* RealmSwift */,
+				048ABE8B2B9707F6007D3682 /* GoogleMaps */,
+				048ABE8D2B9707F6007D3682 /* GoogleMapsBase */,
+				048ABE8F2B9707F6007D3682 /* GoogleMapsCore */,
+				048ABE912B9707F6007D3682 /* GoogleMapsM4B */,
+			);
+			productName = YassirRider;
+			productReference = 048ABE712B9706DD007D3682 /* YassirRider.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		048ABE692B9706DD007D3682 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					048ABE702B9706DD007D3682 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 048ABE6C2B9706DD007D3682 /* Build configuration list for PBXProject "YassirRider" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 048ABE682B9706DD007D3682;
+			packageReferences = (
+				048ABE852B970786007D3682 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				048ABE8A2B9707F6007D3682 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+			);
+			productRefGroup = 048ABE722B9706DD007D3682 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				048ABE702B9706DD007D3682 /* YassirRider */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		048ABE6F2B9706DD007D3682 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				048ABECC2B97137F007D3682 /* style.json in Resources */,
+				048ABED12B97137F007D3682 /* Rubik-Regular.ttf in Resources */,
+				048ABECD2B97137F007D3682 /* Rubik-Bold.ttf in Resources */,
+				049E8CDE2B97205C00A61127 /* AtlasConfig.plist in Resources */,
+				048ABE7C2B9706E1007D3682 /* Preview Assets.xcassets in Resources */,
+				048ABECF2B97137F007D3682 /* Rubik-SemiBold.ttf in Resources */,
+				048ABE792B9706E1007D3682 /* Assets.xcassets in Resources */,
+				048ABED02B97137F007D3682 /* Rubik-ExtraBold.ttf in Resources */,
+				048ABECE2B97137F007D3682 /* Rubik-Medium.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		048ABE6D2B9706DD007D3682 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				048ABEC22B97109B007D3682 /* MapViewControllerBridge.swift in Sources */,
+				048ABEAB2B9708E8007D3682 /* BackButton.swift in Sources */,
+				048ABEB92B970F69007D3682 /* HomeScreen.swift in Sources */,
+				049E8CDC2B97203600A61127 /* AppConfig.swift in Sources */,
+				048ABE772B9706DD007D3682 /* ContentView.swift in Sources */,
+				048ABEB62B970CD0007D3682 /* LoginScreenModel.swift in Sources */,
+				048ABEBB2B970F74007D3682 /* HomeScreenModel.swift in Sources */,
+				048ABEAE2B9708E8007D3682 /* YassirButton.swift in Sources */,
+				048ABEAD2B9708E8007D3682 /* CircleBButton.swift in Sources */,
+				048ABEB42B970CA7007D3682 /* LoginScreen.swift in Sources */,
+				048ABE9C2B970858007D3682 /* Text.swift in Sources */,
+				048ABE9F2B970858007D3682 /* Font.swift in Sources */,
+				049E8CD82B971EFA00A61127 /* RealmManager.swift in Sources */,
+				049E8CDA2B971F1F00A61127 /* Rider.swift in Sources */,
+				048ABEA52B9708A0007D3682 /* LocationManager.swift in Sources */,
+				048ABED32B971546007D3682 /* AppDelegate.swift in Sources */,
+				048ABE752B9706DD007D3682 /* YassirRiderApp.swift in Sources */,
+				048ABE9E2B970858007D3682 /* Color.swift in Sources */,
+				048ABEBD2B970FAF007D3682 /* HomeMapView.swift in Sources */,
+				049E8CE02B9722A600A61127 /* RealmCoordinatorView.swift in Sources */,
+				048ABE9D2B970858007D3682 /* UIAplication.swift in Sources */,
+				048ABEC12B97109B007D3682 /* MapViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		048ABE7D2B9706E1007D3682 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		048ABE7E2B9706E1007D3682 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		048ABE802B9706E1007D3682 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"YassirRider/Preview Content\"";
+				DEVELOPMENT_TEAM = 4S9KHKZW78;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YassirRider/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "this app need your location  position";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yassir.corporation.YassirRider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		048ABE812B9706E1007D3682 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"YassirRider/Preview Content\"";
+				DEVELOPMENT_TEAM = 4S9KHKZW78;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YassirRider/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "this app need your location  position";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yassir.corporation.YassirRider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		048ABE6C2B9706DD007D3682 /* Build configuration list for PBXProject "YassirRider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				048ABE7D2B9706E1007D3682 /* Debug */,
+				048ABE7E2B9706E1007D3682 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		048ABE7F2B9706E1007D3682 /* Build configuration list for PBXNativeTarget "YassirRider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				048ABE802B9706E1007D3682 /* Debug */,
+				048ABE812B9706E1007D3682 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		048ABE852B970786007D3682 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		048ABE8A2B9707F6007D3682 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-maps-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		048ABE862B970786007D3682 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 048ABE852B970786007D3682 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		048ABE882B970786007D3682 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 048ABE852B970786007D3682 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		048ABE8B2B9707F6007D3682 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 048ABE8A2B9707F6007D3682 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMaps;
+		};
+		048ABE8D2B9707F6007D3682 /* GoogleMapsBase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 048ABE8A2B9707F6007D3682 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMapsBase;
+		};
+		048ABE8F2B9707F6007D3682 /* GoogleMapsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 048ABE8A2B9707F6007D3682 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMapsCore;
+		};
+		048ABE912B9707F6007D3682 /* GoogleMapsM4B */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 048ABE8A2B9707F6007D3682 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMapsM4B;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 048ABE692B9706DD007D3682 /* Project object */;
+}
