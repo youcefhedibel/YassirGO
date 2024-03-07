@@ -8,11 +8,13 @@
 import SwiftUI
 import GoogleMaps
 import Foundation
+import RealmSwift
 
 struct HomeScreen: View {
     @StateObject var model = Model()
+    @ObservedObject var rider: Rider
     var body: some View {
-
+        NavigationStack{
             VStack {
                 Mapview(currentMarker: model.currentMarker, markers: model.markersList)
                     .overlay {
@@ -32,9 +34,9 @@ struct HomeScreen: View {
                             Text("Besoin d'un chauffeur ou d'un service de livraison?").font(.primaryText, .extraBold, 20)
                             Text("Indiquez votre destination en cliquant sur la barre en  bas").font(.primaryText, .medium, 14)
                         
-                        Button(action: {
-                            
-                        }){
+                        NavigationLink {
+                            TripRequestCreation()
+                        } label: {
                             HStack{
                                 Image(systemName: "circle")
                                     .font(.system(size: 18))
@@ -53,15 +55,22 @@ struct HomeScreen: View {
                                     .stroke(Color.primaryText, lineWidth: 1.2)
                             }
                         }
+                        
+                        
+                        Text("\(rider.fullname)")
+                        
+                                                
                     }.padding(.horizontal, 14)
                      .padding(.vertical, 20)
                      .padding(.bottom,30)
 
                 }
             }.ignoresSafeArea()
+        }
+            
     }
 }
 
-#Preview {
-    HomeScreen(model: HomeScreen.Model())
-}
+//#Preview {
+//    HomeScreen(model: HomeScreen.Model())
+//}

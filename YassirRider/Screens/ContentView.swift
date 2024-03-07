@@ -16,7 +16,7 @@ struct ContentView: View {
             ZStack{
                 if let rider = realmManager.rider,
                    nil != realmManager.realm {
-                    OpenRealmView()
+                    OpenRealmView(rider: rider)
                 }
             }
             .task{ await realmManager.initialize() }

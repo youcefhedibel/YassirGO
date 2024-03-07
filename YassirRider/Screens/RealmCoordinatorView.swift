@@ -10,6 +10,8 @@ import SwiftUI
 import RealmSwift
 
 struct OpenRealmView: View {
+    @ObservedObject var rider: Rider
+
     @AutoOpen(appId: theAppConfig.appId, timeout: 2000) var autoOpen
     var body: some View {
         switch autoOpen {
@@ -20,7 +22,7 @@ struct OpenRealmView: View {
             ProgressView("Waiting for user to log in...").onAppear{ print("waitingForUser") }
             
         case .open(let realm):
-            HomeScreen().onAppear{ print("open") }
+            HomeScreen(rider: rider).onAppear{ print("open") }
             
         case .progress(let progress):
             ProgressView(progress).onAppear{ print("progress") }
@@ -30,3 +32,4 @@ struct OpenRealmView: View {
         }
     }
 }
+

@@ -11,16 +11,19 @@ import RealmSwift
 class RealmManager: ObservableObject {
     
     static var shared = RealmManager()
+    
     @Published var rider: Rider?
+    
+    @Published var trip: Trip?
     
     private(set) var realm: Realm?
     
     @MainActor
     func initialize() async {
-        
+
         do {
             guard var flexSyncConfig = app.currentUser?.flexibleSyncConfiguration() else { return }
-            flexSyncConfig.objectTypes = [Rider.self]
+            flexSyncConfig.objectTypes = [Rider.self, Trip.self]
             flexSyncConfig.schemaVersion = 0
             
             let realm = try await Realm(configuration: flexSyncConfig)
@@ -35,6 +38,14 @@ class RealmManager: ObservableObject {
                 } else {
                     print("Appending subscription for userDriver")
                     subscriptions.append(QuerySubscription<Rider>(name: "Rider"))
+                }
+                
+                if let currentSubscription = subscriptions.first(named: "Trip") {
+                    print("Replacing subscription for trip")
+                    currentSubscription.updateQuery(toType: Trip.self)
+                } else {
+                    print("Appending subscription for trip")
+                    subscriptions.append(QuerySubscription<Trip>(name: "Trip"))
                 }
             }
             print("Successfully opened realm: \(realm)")
@@ -79,4 +90,15 @@ class RealmManager: ObservableObject {
         self.rider = self.realm?.object(ofType: Rider.self, forPrimaryKey: id)
     }
     
+    
+    @MainActor
+    func createTripRequest(pickup: String, dropoff: String,price: Int, status: TripStatus) throws -> Trip {
+        let newTripRequest =  Trip(pickup: pickup, dropoff: dropoff, price: price, driver: "youcef", status: status)
+        try realm?.write {
+            self.realm?.add(newTripRequest)
+            print("TripRequest created \(newTripRequest)")
+        }
+        
+        return newTripRequest
+    }
 }

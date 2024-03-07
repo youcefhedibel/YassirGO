@@ -10,8 +10,8 @@ import RealmSwift
 
 class Rider: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: String
+    
     @Persisted var fullname: String
- //   @Persisted var profileImageUrl: String
     
     convenience init(id: String, fullname: String) {
         self.init()

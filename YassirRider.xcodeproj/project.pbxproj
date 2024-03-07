@@ -44,6 +44,10 @@
 		049E8CDC2B97203600A61127 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CDB2B97203600A61127 /* AppConfig.swift */; };
 		049E8CDE2B97205C00A61127 /* AtlasConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 049E8CDD2B97205B00A61127 /* AtlasConfig.plist */; };
 		049E8CE02B9722A600A61127 /* RealmCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CDF2B9722A600A61127 /* RealmCoordinatorView.swift */; };
+		049E8CE42B98567700A61127 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CE32B98567700A61127 /* Trip.swift */; };
+		049E8CE72B985AD900A61127 /* TripRequestCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CE62B985AD900A61127 /* TripRequestCreation.swift */; };
+		049E8CE92B985AED00A61127 /* TripRequestCreationScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CE82B985AED00A61127 /* TripRequestCreationScreenModel.swift */; };
+		049E8CEB2B986C6800A61127 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CEA2B986C6800A61127 /* CGFloat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,10 @@
 		049E8CDB2B97203600A61127 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		049E8CDD2B97205B00A61127 /* AtlasConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AtlasConfig.plist; sourceTree = "<group>"; };
 		049E8CDF2B9722A600A61127 /* RealmCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCoordinatorView.swift; sourceTree = "<group>"; };
+		049E8CE32B98567700A61127 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		049E8CE62B985AD900A61127 /* TripRequestCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequestCreation.swift; sourceTree = "<group>"; };
+		049E8CE82B985AED00A61127 /* TripRequestCreationScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequestCreationScreenModel.swift; sourceTree = "<group>"; };
+		049E8CEA2B986C6800A61127 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				049E8CD92B971F1F00A61127 /* Rider.swift */,
+				049E8CE32B98567700A61127 /* Trip.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +199,7 @@
 			children = (
 				048ABE762B9706DD007D3682 /* ContentView.swift */,
 				049E8CDF2B9722A600A61127 /* RealmCoordinatorView.swift */,
+				049E8CE52B985AA900A61127 /* TripRequest */,
 				048ABEB72B970F5A007D3682 /* Home */,
 				048ABEB22B970C91007D3682 /* Login */,
 			);
@@ -212,6 +222,7 @@
 				048ABE9B2B970858007D3682 /* Font.swift */,
 				048ABE982B970857007D3682 /* Text.swift */,
 				048ABE992B970857007D3682 /* UIAplication.swift */,
+				049E8CEA2B986C6800A61127 /* CGFloat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -280,6 +291,15 @@
 				048ABECB2B97137F007D3682 /* Rubik-Regular.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		049E8CE52B985AA900A61127 /* TripRequest */ = {
+			isa = PBXGroup;
+			children = (
+				049E8CE62B985AD900A61127 /* TripRequestCreation.swift */,
+				049E8CE82B985AED00A61127 /* TripRequestCreationScreenModel.swift */,
+			);
+			path = TripRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,10 +395,13 @@
 				048ABEAB2B9708E8007D3682 /* BackButton.swift in Sources */,
 				048ABEB92B970F69007D3682 /* HomeScreen.swift in Sources */,
 				049E8CDC2B97203600A61127 /* AppConfig.swift in Sources */,
+				049E8CE42B98567700A61127 /* Trip.swift in Sources */,
+				049E8CE92B985AED00A61127 /* TripRequestCreationScreenModel.swift in Sources */,
 				048ABE772B9706DD007D3682 /* ContentView.swift in Sources */,
 				048ABEB62B970CD0007D3682 /* LoginScreenModel.swift in Sources */,
 				048ABEBB2B970F74007D3682 /* HomeScreenModel.swift in Sources */,
 				048ABEAE2B9708E8007D3682 /* YassirButton.swift in Sources */,
+				049E8CE72B985AD900A61127 /* TripRequestCreation.swift in Sources */,
 				048ABEAD2B9708E8007D3682 /* CircleBButton.swift in Sources */,
 				048ABEB42B970CA7007D3682 /* LoginScreen.swift in Sources */,
 				048ABE9C2B970858007D3682 /* Text.swift in Sources */,
@@ -390,6 +413,7 @@
 				048ABE752B9706DD007D3682 /* YassirRiderApp.swift in Sources */,
 				048ABE9E2B970858007D3682 /* Color.swift in Sources */,
 				048ABEBD2B970FAF007D3682 /* HomeMapView.swift in Sources */,
+				049E8CEB2B986C6800A61127 /* CGFloat.swift in Sources */,
 				049E8CE02B9722A600A61127 /* RealmCoordinatorView.swift in Sources */,
 				048ABE9D2B970858007D3682 /* UIAplication.swift in Sources */,
 				048ABEC12B97109B007D3682 /* MapViewController.swift in Sources */,
