@@ -14,8 +14,6 @@ class RealmManager: ObservableObject {
     
     @Published var rider: Rider?
     
-    @Published var trip: Trip?
-    
     private(set) var realm: Realm?
     
     @MainActor
@@ -88,6 +86,13 @@ class RealmManager: ObservableObject {
         guard let id = app.currentUser?.id else { return }
         
         self.rider = self.realm?.object(ofType: Rider.self, forPrimaryKey: id)
+    }
+    
+    @MainActor
+    func  getTripRequest(id: ObjectId) throws -> Trip {
+        
+        guard let trip = self.realm?.object(ofType: Trip.self, forPrimaryKey: id) else {return Trip()}
+        return trip
     }
     
     

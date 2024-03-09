@@ -12,25 +12,17 @@ extension TripRequestCreation {
     class Model: ObservableObject {
         
         let realmManager = RealmManager.shared
+        @Published var trip: Trip?
         
         @MainActor
         func createTripRequest(pickup: String, dropoff: String, price: Int, status: TripStatus) {
             do {
-                try realmManager.createTripRequest(pickup: pickup, dropoff: dropoff, price: price, status: status)
+                self.trip = try realmManager.createTripRequest(pickup: pickup, dropoff: dropoff, price: price, status: status)
             } catch {
                 print(error.localizedDescription)
             }
         }
         
-//        @MainActor
-//        func getTripRequest(){
-//            do {
-//                self.tripRequest = try realmManager.getTripRequest()
-//                print("TRRRIPP REQUEST  \(tripRequest)")
-//            } catch {
-//                print(error.localizedDescription)
-//            }
-//        }
         
     }
 }

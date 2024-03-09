@@ -48,6 +48,11 @@
 		049E8CE72B985AD900A61127 /* TripRequestCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CE62B985AD900A61127 /* TripRequestCreation.swift */; };
 		049E8CE92B985AED00A61127 /* TripRequestCreationScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CE82B985AED00A61127 /* TripRequestCreationScreenModel.swift */; };
 		049E8CEB2B986C6800A61127 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CEA2B986C6800A61127 /* CGFloat.swift */; };
+		049E8CEE2B99C31100A61127 /* TripFlowScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CED2B99C31100A61127 /* TripFlowScreen.swift */; };
+		049E8CF02B99C32800A61127 /* TripFlowScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CEF2B99C32800A61127 /* TripFlowScreenModel.swift */; };
+		049E8CF32B9A87E200A61127 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 049E8CF22B9A87E200A61127 /* Lottie */; };
+		049E8CF52B9A888B00A61127 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CF42B9A888B00A61127 /* LottieView.swift */; };
+		049E8CF82B9A8A9F00A61127 /* progress-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 049E8CF72B9A8A9F00A61127 /* progress-animation.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +93,10 @@
 		049E8CE62B985AD900A61127 /* TripRequestCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequestCreation.swift; sourceTree = "<group>"; };
 		049E8CE82B985AED00A61127 /* TripRequestCreationScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequestCreationScreenModel.swift; sourceTree = "<group>"; };
 		049E8CEA2B986C6800A61127 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		049E8CED2B99C31100A61127 /* TripFlowScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFlowScreen.swift; sourceTree = "<group>"; };
+		049E8CEF2B99C32800A61127 /* TripFlowScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFlowScreenModel.swift; sourceTree = "<group>"; };
+		049E8CF42B9A888B00A61127 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		049E8CF72B9A8A9F00A61127 /* progress-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "progress-animation.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				048ABE922B9707F6007D3682 /* GoogleMapsM4B in Frameworks */,
+				049E8CF32B9A87E200A61127 /* Lottie in Frameworks */,
 				048ABE902B9707F6007D3682 /* GoogleMapsCore in Frameworks */,
 				048ABE892B970786007D3682 /* RealmSwift in Frameworks */,
 				048ABE872B970786007D3682 /* Realm in Frameworks */,
@@ -197,6 +207,7 @@
 		048ABE952B970821007D3682 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				049E8CEC2B99C2E100A61127 /* TripFlow */,
 				048ABE762B9706DD007D3682 /* ContentView.swift */,
 				049E8CDF2B9722A600A61127 /* RealmCoordinatorView.swift */,
 				049E8CE52B985AA900A61127 /* TripRequest */,
@@ -209,6 +220,7 @@
 		048ABE962B970828007D3682 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				049E8CF62B9A8A7800A61127 /* Lottie */,
 				048ABEC62B97137F007D3682 /* Font */,
 				048ABEC42B97137F007D3682 /* MapStyle */,
 			);
@@ -234,6 +246,7 @@
 				048ABEA72B9708E8007D3682 /* BackButton.swift */,
 				048ABEAA2B9708E8007D3682 /* YassirButton.swift */,
 				048ABEA92B9708E8007D3682 /* CircleBButton.swift */,
+				049E8CF42B9A888B00A61127 /* LottieView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -302,6 +315,23 @@
 			path = TripRequest;
 			sourceTree = "<group>";
 		};
+		049E8CEC2B99C2E100A61127 /* TripFlow */ = {
+			isa = PBXGroup;
+			children = (
+				049E8CED2B99C31100A61127 /* TripFlowScreen.swift */,
+				049E8CEF2B99C32800A61127 /* TripFlowScreenModel.swift */,
+			);
+			path = TripFlow;
+			sourceTree = "<group>";
+		};
+		049E8CF62B9A8A7800A61127 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				049E8CF72B9A8A9F00A61127 /* progress-animation.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -325,6 +355,7 @@
 				048ABE8D2B9707F6007D3682 /* GoogleMapsBase */,
 				048ABE8F2B9707F6007D3682 /* GoogleMapsCore */,
 				048ABE912B9707F6007D3682 /* GoogleMapsM4B */,
+				049E8CF22B9A87E200A61127 /* Lottie */,
 			);
 			productName = YassirRider;
 			productReference = 048ABE712B9706DD007D3682 /* YassirRider.app */;
@@ -357,6 +388,7 @@
 			packageReferences = (
 				048ABE852B970786007D3682 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				048ABE8A2B9707F6007D3682 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+				049E8CF12B9A87E100A61127 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = 048ABE722B9706DD007D3682 /* Products */;
 			projectDirPath = "";
@@ -381,6 +413,7 @@
 				048ABE792B9706E1007D3682 /* Assets.xcassets in Resources */,
 				048ABED02B97137F007D3682 /* Rubik-ExtraBold.ttf in Resources */,
 				048ABECE2B97137F007D3682 /* Rubik-Medium.ttf in Resources */,
+				049E8CF82B9A8A9F00A61127 /* progress-animation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049E8CF52B9A888B00A61127 /* LottieView.swift in Sources */,
 				048ABEC22B97109B007D3682 /* MapViewControllerBridge.swift in Sources */,
 				048ABEAB2B9708E8007D3682 /* BackButton.swift in Sources */,
 				048ABEB92B970F69007D3682 /* HomeScreen.swift in Sources */,
@@ -403,6 +437,7 @@
 				048ABEAE2B9708E8007D3682 /* YassirButton.swift in Sources */,
 				049E8CE72B985AD900A61127 /* TripRequestCreation.swift in Sources */,
 				048ABEAD2B9708E8007D3682 /* CircleBButton.swift in Sources */,
+				049E8CF02B99C32800A61127 /* TripFlowScreenModel.swift in Sources */,
 				048ABEB42B970CA7007D3682 /* LoginScreen.swift in Sources */,
 				048ABE9C2B970858007D3682 /* Text.swift in Sources */,
 				048ABE9F2B970858007D3682 /* Font.swift in Sources */,
@@ -415,6 +450,7 @@
 				048ABEBD2B970FAF007D3682 /* HomeMapView.swift in Sources */,
 				049E8CEB2B986C6800A61127 /* CGFloat.swift in Sources */,
 				049E8CE02B9722A600A61127 /* RealmCoordinatorView.swift in Sources */,
+				049E8CEE2B99C31100A61127 /* TripFlowScreen.swift in Sources */,
 				048ABE9D2B970858007D3682 /* UIAplication.swift in Sources */,
 				048ABEC12B97109B007D3682 /* MapViewController.swift in Sources */,
 			);
@@ -644,6 +680,14 @@
 				minimumVersion = 8.4.0;
 			};
 		};
+		049E8CF12B9A87E100A61127 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -676,6 +720,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 048ABE8A2B9707F6007D3682 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
 			productName = GoogleMapsM4B;
+		};
+		049E8CF22B9A87E200A61127 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 049E8CF12B9A87E100A61127 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

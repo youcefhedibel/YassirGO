@@ -11,8 +11,13 @@ import Foundation
 import RealmSwift
 
 struct HomeScreen: View {
-    @StateObject var model = Model()
+    
+    @StateObject private var model = Model()
+    
     @ObservedObject var rider: Rider
+    var tripRequestId: ObjectId?
+    @State var isShowingTripFlowSheet: Bool = false
+    
     var body: some View {
         NavigationStack{
             VStack {
@@ -65,6 +70,16 @@ struct HomeScreen: View {
                      .padding(.bottom,30)
 
                 }
+                .sheet(isPresented: $isShowingTripFlowSheet, content: {
+                    if let tripReqId = tripRequestId {
+                        TripFlowScreen(tripRequestId: tripReqId)
+                            .padding(.horizontal,8)
+                            .padding(.vertical, 0)
+                            .transition(.move(edge: .bottom))
+                            .presentationDetents([.fraction(0.5)])
+                            .interactiveDismissDisabled(true)
+                    }
+                })
             }.ignoresSafeArea()
         }
             
@@ -72,5 +87,5 @@ struct HomeScreen: View {
 }
 
 //#Preview {
-//    HomeScreen(model: HomeScreen.Model())
+//    HomeScreen( rider: Rider(id: "RTYUJ", fullname: "youcef"))
 //}
