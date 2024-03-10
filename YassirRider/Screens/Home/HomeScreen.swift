@@ -73,6 +73,7 @@ struct HomeScreen: View {
                 .sheet(isPresented: $isShowingTripFlowSheet, content: {
                     if let tripReqId = tripRequestId {
                         TripFlowScreen(tripRequestId: tripReqId)
+                            .environment(\.realm, RealmManager.shared.realm!)
                             .padding(.horizontal,8)
                             .padding(.vertical, 0)
                             .transition(.move(edge: .bottom))

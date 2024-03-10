@@ -15,6 +15,8 @@ let atlasUrl = theAppConfig.atlasUrl
 
 let app = App(id: theAppConfig.appId, configuration: AppConfiguration(baseURL: theAppConfig.baseUrl, transport: nil))
 
+
+
 @main
 struct YassirRiderApp: SwiftUI.App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate

@@ -16,6 +16,8 @@ class RealmManager: ObservableObject {
     
     private(set) var realm: Realm?
     
+    
+    
     @MainActor
     func initialize() async {
 
@@ -24,7 +26,7 @@ class RealmManager: ObservableObject {
             flexSyncConfig.objectTypes = [Rider.self, Trip.self]
             flexSyncConfig.schemaVersion = 0
             
-            let realm = try await Realm(configuration: flexSyncConfig)
+            let realm = try await Realm(configuration: flexSyncConfig, downloadBeforeOpen: .always)
             
             
             let subscriptions = realm.subscriptions

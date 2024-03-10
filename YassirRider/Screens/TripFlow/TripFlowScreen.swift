@@ -10,6 +10,7 @@ import RealmSwift
 
 struct TripFlowScreen: View {
     @StateObject private var model = Model()
+    
     var tripRequestId: ObjectId
     var body: some View {
         VStack{
