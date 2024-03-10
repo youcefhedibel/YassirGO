@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginScreen: View {
     
-    @StateObject var model = Model()
+    @StateObject private var model = Model()
     
     @State private var email: String = ""
     @State private var password: String = ""

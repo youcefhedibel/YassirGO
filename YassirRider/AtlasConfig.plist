@@ -6,7 +6,5 @@
 	<string>application-0-tljah</string>
 	<key>baseUrl</key>
 	<string>https://services.cloud.mongodb.com</string>
-	<key>dataExplorerLink</key>
-	<string>https://cloud.mongodb.com/links/application-0-tljah/explorer/Cluster0/database/collection/find</string>
 </dict>
 </plist>

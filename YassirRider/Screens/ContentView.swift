@@ -10,18 +10,25 @@ import RealmSwift
 
 struct ContentView: View {
     @StateObject private var realmManager = RealmManager.shared
-
+    @StateObject private var riderManager = RiderRepo.sharedRider
     var body: some View {
         if let _ = app.currentUser {
             ZStack{
-                if let rider = realmManager.rider,
+
+                if let rider = riderManager.rider,
                    nil != realmManager.realm {
+                    Text("CONTENT VIEW22")
                     OpenRealmView(rider: rider)
                 }
             }
-            .task{ await realmManager.initialize() }
+            .task{ await runTasks() }
         } else {
             LoginScreen()
         }
+    }
+    
+    private func runTasks() async {
+        await realmManager.initialize()
+        await riderManager.getRider()
     }
 }

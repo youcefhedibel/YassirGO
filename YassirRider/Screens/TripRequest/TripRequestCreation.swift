@@ -59,7 +59,7 @@ struct TripRequestCreation: View {
                         Spacer()
                     
                     NavigationLink {
-                        HomeScreen(rider: RealmManager.shared.rider!, tripRequestId: model.trip?._id, isShowingTripFlowSheet: true)
+                        HomeScreen(rider: RiderRepo.sharedRider.rider!, tripRequestId: model.trip?._id, isShowingTripFlowSheet: true)
                         //TripFlowScreen(tripRequestId: model.trip?._id ?? ObjectId())
                     } label: {
                         YassirButton(disabled: disableButton, radius: 10) {

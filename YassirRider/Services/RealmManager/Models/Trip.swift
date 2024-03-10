@@ -11,6 +11,7 @@ import RealmSwift
 class Trip: Object, ObjectKeyIdentifiable {
     
     @Persisted(primaryKey: true) var _id: ObjectId
+    
     @Persisted var pickup: String
     
     @Persisted var dropoff: String
@@ -33,10 +34,10 @@ class Trip: Object, ObjectKeyIdentifiable {
 }
 
 enum TripStatus: String, PersistableEnum {
-    case idle
     case pending
     case accepted
     case arrivedDriver
     case toDestination
     case arrivedDestination 
 }
+

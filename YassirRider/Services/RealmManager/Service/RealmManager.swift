@@ -7,52 +7,31 @@
 
 import Foundation
 import RealmSwift
+import Realm
 
 class RealmManager: ObservableObject {
     
     static var shared = RealmManager()
     
-    @Published var rider: Rider?
-    
     private(set) var realm: Realm?
-    
-    
     
     @MainActor
     func initialize() async {
-
+        
         do {
             guard var flexSyncConfig = app.currentUser?.flexibleSyncConfiguration() else { return }
             flexSyncConfig.objectTypes = [Rider.self, Trip.self]
             flexSyncConfig.schemaVersion = 0
             
-            let realm = try await Realm(configuration: flexSyncConfig, downloadBeforeOpen: .always)
+            var realm = try await Realm(configuration: flexSyncConfig)
             
+            try await realm.setSubscriptions()
             
-            let subscriptions = realm.subscriptions
-            
-            try await subscriptions.update {
-                if let currentSubscription = subscriptions.first(named: "Rider") {
-                    print("Replacing subscription for userDriver")
-                    currentSubscription.updateQuery(toType: Rider.self)
-                } else {
-                    print("Appending subscription for userDriver")
-                    subscriptions.append(QuerySubscription<Rider>(name: "Rider"))
-                }
-                
-                if let currentSubscription = subscriptions.first(named: "Trip") {
-                    print("Replacing subscription for trip")
-                    currentSubscription.updateQuery(toType: Trip.self)
-                } else {
-                    print("Appending subscription for trip")
-                    subscriptions.append(QuerySubscription<Trip>(name: "Trip"))
-                }
-            }
             print("Successfully opened realm: \(realm)")
             
             self.realm = realm
             
-            try self.getRider()
+            await RiderRepo.sharedRider.getRider()
             
         } catch {
             print("Failed to open realm: \(error.localizedDescription)")
@@ -60,52 +39,33 @@ class RealmManager: ObservableObject {
     }
     
     @MainActor
-    func login(email: String, password: String) async throws {
-        let _ = try await app.login(credentials: .emailPassword(email: email, password: password))
-        await initialize()
-    }
-    
-    func signUp(fullname:String, email: String, password: String) async throws {
-        try await app.emailPasswordAuth.registerUser(email: email, password: password)
-        try await self.login(email: email, password: password)
-        try await self.createRider(fullname: fullname)
-    }
-    
-    @MainActor
-    func createRider(fullname: String) throws {
-        guard let id = app.currentUser?.id else { return }
+    func write<Result>(_ block: (() throws -> Result)) throws {
         
-        let newRider = Rider(id: id, fullname: fullname)
-        
-        try realm?.write {
-            self.realm?.add(newRider)
-            print("rider created \(newRider)")
+        if let realm = self.realm {
+            try realm.write(block)
+        } else {
+            print("could not write the object")
         }
     }
     
     @MainActor
-    func getRider() throws {
-        guard let id = app.currentUser?.id else { return }
-        
-        self.rider = self.realm?.object(ofType: Rider.self, forPrimaryKey: id)
-    }
-    
-    @MainActor
-    func  getTripRequest(id: ObjectId) throws -> Trip {
-        
-        guard let trip = self.realm?.object(ofType: Trip.self, forPrimaryKey: id) else {return Trip()}
-        return trip
-    }
-    
-    
-    @MainActor
-    func createTripRequest(pickup: String, dropoff: String,price: Int, status: TripStatus) throws -> Trip {
-        let newTripRequest =  Trip(pickup: pickup, dropoff: dropoff, price: price, driver: "youcef", status: status)
-        try realm?.write {
-            self.realm?.add(newTripRequest)
-            print("TripRequest created \(newTripRequest)")
+    func get<Element, KeyType>(
+        ofType type: Element.Type,
+        forPrimaryKey key: KeyType
+    ) -> Element? where Element : RealmSwiftObject {
+        if let realm = self.realm {
+            return realm.object(ofType: type, forPrimaryKey: key)
+        } else {
+            return nil
         }
-        
-        return newTripRequest
+    }
+    
+    @MainActor
+    func add(_ object: Object) {
+        if let realm = self.realm {
+            realm.add(object)
+            print("add object")
+        }
+        print("could not add object")
     }
 }

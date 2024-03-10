@@ -13,9 +13,19 @@ class Rider: Object, ObjectKeyIdentifiable {
     
     @Persisted var fullname: String
     
+    @Persisted var currentTripId: ObjectId?
+    
+    @Persisted var profileImageUrl: String?
+    
+    @Persisted var phoneNumber: String
+    
+    @Persisted var trips: List<Trip>
+
     convenience init(id: String, fullname: String) {
         self.init()
         self._id = id
         self.fullname = fullname
+        self.profileImageUrl = nil
+        self.phoneNumber = "0791892621"
     }
 }

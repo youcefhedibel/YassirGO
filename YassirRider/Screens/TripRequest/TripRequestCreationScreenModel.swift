@@ -17,7 +17,9 @@ extension TripRequestCreation {
         @MainActor
         func createTripRequest(pickup: String, dropoff: String, price: Int, status: TripStatus) {
             do {
-                self.trip = try realmManager.createTripRequest(pickup: pickup, dropoff: dropoff, price: price, status: status)
+                
+                try TripRepo.sharedTrip.createTripRequest(pickup: pickup, dropoff: dropoff, price: price, status: status)
+                
             } catch {
                 print(error.localizedDescription)
             }

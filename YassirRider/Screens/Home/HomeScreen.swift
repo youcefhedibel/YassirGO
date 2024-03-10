@@ -77,7 +77,7 @@ struct HomeScreen: View {
                             .padding(.horizontal,8)
                             .padding(.vertical, 0)
                             .transition(.move(edge: .bottom))
-                            .presentationDetents([.fraction(0.5)])
+                            .presentationDetents([.fraction(0.6)])
                             .interactiveDismissDisabled(true)
                     }
                 })

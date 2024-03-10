@@ -9,6 +9,9 @@ import Foundation
 
 extension LoginScreen {
     class Model: ObservableObject {
+        
+        private let loginManager = LoginRepo.sharedLogin
+
         @Published var isLoading: Bool = false
         
         @MainActor
@@ -16,7 +19,7 @@ extension LoginScreen {
             self.isLoading = true
             Task {
                 do {
-                    try await RealmManager.shared.login(email: email,password: password)
+                    try await LoginRepo.sharedLogin.login(email: email, password: password)
                 }  catch {
                     self.isLoading = false
                     print("username or password incorrect")
@@ -29,7 +32,7 @@ extension LoginScreen {
             self.isLoading = true
             Task {
                 do {
-                    try await RealmManager.shared.signUp(fullname: fullname, email: email, password: password)
+                    try await LoginRepo.sharedLogin.signUp(email: email, password: password, fullname: fullname)
                     
                 } catch {
                     print("failed to sign up")
