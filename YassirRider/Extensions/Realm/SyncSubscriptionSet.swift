@@ -9,6 +9,7 @@ import Foundation
 import RealmSwift
 import Realm
 
+
 extension SyncSubscriptionSet {
     func checkAndSet<Model: Object>(subKey: String, model: Model.Type) {
         if let selfSub = self.first(named: subKey) {
@@ -20,4 +21,5 @@ extension SyncSubscriptionSet {
         }
     }
 }
+
 

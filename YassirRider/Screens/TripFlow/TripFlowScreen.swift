@@ -10,12 +10,15 @@ import RealmSwift
 
 struct TripFlowScreen: View {
     @StateObject private var model = Model()
-    
+    @ObservedRealmObject var trip: Trip
     var tripRequestId: ObjectId
     var body: some View {
         VStack{
             if let tripStatus = model.trip?.status {
-                switch tripStatus {
+                
+                Text("\(TripRepo.sharedTrip.trip?.status.rawValue ?? "TEST")")
+                    .font(.red, .medium, 18)
+                switch trip.status {
                 case.pending:
                     LottieView(name: "progress-animation", loopMode: .loop)
                         .frame(height: 2)
@@ -43,10 +46,10 @@ struct TripFlowScreen: View {
                                 }.padding(.top,2)
                                 
                             VStack(alignment:.leading, spacing:33) {
-                                Text("Sidi Yahia, Said Hamdine")
+                                Text(trip.pickup)
                                     .font(.primaryText, .regular, 14)
                                     .lineLimit(1)
-                                Text("Superette 3M Said Hamdine, Rue des Fleurs...")
+                                Text(trip.dropoff)
                                     .font(.primaryText, .regular, 14)
                                     .lineLimit(1)
                                 }
@@ -113,6 +116,6 @@ struct TripFlowScreen: View {
     }
 }
 
-#Preview {
-    TripFlowScreen(tripRequestId: ObjectId("65e882b7cdf51df5efc5e138"))
-}
+//#Preview {
+//   // TripFlowScreen(tripRequestId: ObjectId("65e882b7cdf51df5efc5e138"))
+//}

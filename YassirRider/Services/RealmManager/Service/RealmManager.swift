@@ -13,7 +13,7 @@ class RealmManager: ObservableObject {
     
     static var shared = RealmManager()
     
-    private(set) var realm: Realm?
+    var realm: Realm?
     
     @MainActor
     func initialize() async {
@@ -32,6 +32,7 @@ class RealmManager: ObservableObject {
             self.realm = realm
             
             await RiderRepo.sharedRider.getRider()
+
             
         } catch {
             print("Failed to open realm: \(error.localizedDescription)")
@@ -43,20 +44,6 @@ class RealmManager: ObservableObject {
         
         if let realm = self.realm {
             try realm.write(block)
-        } else {
-            print("could not write the object")
-        }
-    }
-    
-    @MainActor
-    func get<Element, KeyType>(
-        ofType type: Element.Type,
-        forPrimaryKey key: KeyType
-    ) -> Element? where Element : RealmSwiftObject {
-        if let realm = self.realm {
-            return realm.object(ofType: type, forPrimaryKey: key)
-        } else {
-            return nil
         }
     }
     
@@ -64,8 +51,6 @@ class RealmManager: ObservableObject {
     func add(_ object: Object) {
         if let realm = self.realm {
             realm.add(object)
-            print("add object")
         }
-        print("could not add object")
     }
 }

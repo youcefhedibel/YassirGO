@@ -11,19 +11,20 @@ import RealmSwift
 extension TripRequestCreation {
     class Model: ObservableObject {
         
-        let realmManager = RealmManager.shared
         @Published var trip: Trip?
         
         @MainActor
         func createTripRequest(pickup: String, dropoff: String, price: Int, status: TripStatus) {
-            do {
-                
-                try TripRepo.sharedTrip.createTripRequest(pickup: pickup, dropoff: dropoff, price: price, status: status)
-                
-            } catch {
-                print(error.localizedDescription)
+            Task {
+                do {
+                    try await self.trip = TripRepo.sharedTrip.createTripRequest(pickup: pickup, dropoff: dropoff, price: price, status: status)
+                } catch {
+                    print("Error creating trip: \(error)")
+                }
             }
         }
+        
+
         
         
     }

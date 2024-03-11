@@ -15,7 +15,9 @@ struct HomeScreen: View {
     @StateObject private var model = Model()
     
     @ObservedObject var rider: Rider
+    
     var tripRequestId: ObjectId?
+    
     @State var isShowingTripFlowSheet: Bool = false
     
     var body: some View {
@@ -72,7 +74,7 @@ struct HomeScreen: View {
                 }
                 .sheet(isPresented: $isShowingTripFlowSheet, content: {
                     if let tripReqId = tripRequestId {
-                        TripFlowScreen(tripRequestId: tripReqId)
+                        TripFlowScreen(trip: TripRepo.sharedTrip.trip ?? Trip(), tripRequestId: tripReqId)
                             .environment(\.realm, RealmManager.shared.realm!)
                             .padding(.horizontal,8)
                             .padding(.vertical, 0)

@@ -60,7 +60,6 @@ struct TripRequestCreation: View {
                     
                     NavigationLink {
                         HomeScreen(rider: RiderRepo.sharedRider.rider!, tripRequestId: model.trip?._id, isShowingTripFlowSheet: true)
-                        //TripFlowScreen(tripRequestId: model.trip?._id ?? ObjectId())
                     } label: {
                         YassirButton(disabled: disableButton, radius: 10) {
                                 Text("create trip").font(.white, .bold, 20)

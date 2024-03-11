@@ -21,7 +21,7 @@ struct ContentView: View {
                     OpenRealmView(rider: rider)
                 }
             }
-            .task{ await runTasks() }
+            .task{  await realmManager.initialize() }
         } else {
             LoginScreen()
         }
@@ -29,6 +29,5 @@ struct ContentView: View {
     
     private func runTasks() async {
         await realmManager.initialize()
-        await riderManager.getRider()
     }
 }

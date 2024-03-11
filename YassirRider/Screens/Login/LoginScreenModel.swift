@@ -19,7 +19,7 @@ extension LoginScreen {
             self.isLoading = true
             Task {
                 do {
-                    try await LoginRepo.sharedLogin.login(email: email, password: password)
+                    try await loginManager.login(email: email, password: password)
                 }  catch {
                     self.isLoading = false
                     print("username or password incorrect")
@@ -32,7 +32,7 @@ extension LoginScreen {
             self.isLoading = true
             Task {
                 do {
-                    try await LoginRepo.sharedLogin.signUp(email: email, password: password, fullname: fullname)
+                    try await loginManager.signUp(email: email, password: password, fullname: fullname)
                     
                 } catch {
                     print("failed to sign up")

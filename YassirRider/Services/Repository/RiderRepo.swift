@@ -18,8 +18,8 @@ class RiderRepo: RealmManager {
     @MainActor
     func getRider() async {
         
-        guard let realm = self.realm else {
-            await initialize()
+        guard let realm = RealmManager.shared.realm else {
+            await RealmManager.shared.initialize()
             return
         }
         
@@ -35,7 +35,7 @@ class RiderRepo: RealmManager {
     @MainActor
     func createRider(fullname: String) async throws {
         
-        await self.initialize()
+        await RealmManager.shared.initialize()
         
         guard let id = app.currentUser?.id else {
             print("createRider:: NO ID FOUND")
@@ -44,9 +44,9 @@ class RiderRepo: RealmManager {
         
         let newRider = Rider(id: id, fullname: fullname)
         
-        try self.write {
+        try RealmManager.shared.write {
             self.rider = newRider
-            self.add(newRider)
+            RealmManager.shared.add(newRider)
             print("rider created \(newRider)")
 
         }
@@ -55,7 +55,7 @@ class RiderRepo: RealmManager {
     
     @MainActor
     func assignTripRequest(_ id: ObjectId) throws {
-        try self.write {
+        try RealmManager.shared.write {
             self.rider?.currentTripId = id
         }
     }
