@@ -63,3 +63,6 @@ extension Trip {
         case business
     }
 }
+
+
+

@@ -17,9 +17,34 @@ extension  TripFlowScreen {
                 do {
                     try await TripRepo.sharedTrip.cancelTrip(id: tripID)
                 } catch {
-                    print("Error canceling trip: \(error)")
+                    print("Error::canceling::trip: \(error)")
                 }
             }
         }
+        
+        @MainActor
+        func completeTrip(tripID: ObjectId) {
+            Task {
+                do {
+                    try await TripRepo.sharedTrip.completeTrip(id: tripID)
+                } catch {
+                    print("Error::completing::trip::\(error)")
+                }
+            }
+        }
+        
+        @MainActor
+        func rateDriver(stars: Int) {
+            Task {
+                do {
+                    try await DriverRepo.sharedDriver.rateDriver(stars: stars)
+                } catch {
+                    print("Error::rating::driver::\(error)")
+
+                }
+            }
+        }
+        
+        
     }
 }

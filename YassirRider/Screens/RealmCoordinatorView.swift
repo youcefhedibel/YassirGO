@@ -23,12 +23,12 @@ struct OpenRealmView: View {
         case .waitingForUser:
             ProgressView("Waiting for user to log in...").onAppear{ print("waitingForUser") }
             
-        case .open(let realm):
+        case .open( _):
             HomeScreen(rider: rider).onAppear{ print("open") }
             
         case .progress(let progress):
             ProgressView(progress).onAppear{ print("progress") }
-        case .error(let error):
+        case .error( _):
             
             EmptyView().onAppear{ print("error") }
         }

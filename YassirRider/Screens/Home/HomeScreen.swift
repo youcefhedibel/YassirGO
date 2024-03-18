@@ -25,25 +25,6 @@ struct HomeScreen: View {
                 Mapview(currentMarker: model.currentMarker, markers: model.markersList)
                 ZStack {
                     VStack {
-                        HStack {
-                            switch TripRepo.sharedTrip.trip?.status {
-                            case .pending:
-                                tripStateText(text: "Recherche de chauffeur")
-                                case .accepted:
-                                    tripStateText(text: "Demande accepté")
-                                case .toClient:
-                                    tripStateText(text: "Votre chauffeur est en route")
-                                case .arrivedClient:
-                                    tripStateText(text: "Votre chauffeure est arrivé")
-                                case .toDestination:
-                                    tripStateText(text: "En route vers la distination")
-                                case .arrivedDestination:
-                                    tripStateText(text: "Arrivé à la distination")
-                                default: EmptyView()
-                            }
-                                
-                        }
-                             
                         Spacer()
                         HStack {
                             Spacer()
@@ -86,9 +67,6 @@ struct HomeScreen: View {
                         
                         
                     }.padding(.top, CGFloat.heightPer(per: 0.06))
-                        .onAppear{
-                            print("triStatus\(TripRepo.sharedTrip.trip?.status)")
-                        }
                 }
                 .asBottomSheetUI(
                     show: $isShowingTripFlowSheet,
@@ -102,24 +80,7 @@ struct HomeScreen: View {
         }
     }
     
-    @ViewBuilder
-    func tripStateText(text: String) -> some View {
-        HStack {
-            Image("icon-home")
-                .resizable()
-                .frame(width: 30, height: 30)
-            Spacer()
-            Text(text).font(.black, .semiBold, 16)
-            Spacer()
-        }
-        .padding(8)
-        .background {
-            RoundedRectangle(cornerRadius: 8)
-                .foregroundColor(.white)
-        }
-        .padding()
 
-    }
 }
 
 #Preview {

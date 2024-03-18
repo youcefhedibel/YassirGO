@@ -16,6 +16,21 @@ class DriverRepo: RealmManager {
     @Published private(set) var driver: Driver?
     
     @MainActor
+    func getDriver() async  -> Driver {
+        
+        guard let realm = RealmManager.shared.realm else {
+            await RealmManager.shared.initialize()
+            return Driver()
+        }
+        
+        guard let driver = realm.object(ofType: Driver.self, forPrimaryKey: "65f2e02632da5192dc54b195")  else {
+            print("NO DRIVER FOUND !!")
+            return Driver()}
+        print("GET DRIVER::: \(driver)")
+        return driver
+    }
+    
+    @MainActor
     func asignTripToDriver(tripId: ObjectId) async throws {
         
         guard let realm = RealmManager.shared.realm else {
@@ -35,19 +50,24 @@ class DriverRepo: RealmManager {
     }
     
     @MainActor
-    func getDriver() async  -> Driver {
-        
+    func rateDriver(stars: Int) async throws {
         guard let realm = RealmManager.shared.realm else {
-            await RealmManager.shared.initialize()
-            return Driver()
+            throw NSError(domain: "Realm not initialized", code: 0, userInfo: nil)
         }
         
-        guard let driver = realm.object(ofType: Driver.self, forPrimaryKey: "65f2e02632da5192dc54b195")  else {
-            print("NO DRIVER FOUND !!")
-            return Driver()}
-        print("GET DRIVER::: \(driver)")
-        return driver
+        do {
+            try realm.write {
+                self.driver = realm.object(ofType: Driver.self, forPrimaryKey: "65f2e02632da5192dc54b195")
+                self.driver?.rating =  Double(stars)
+            }
+            print("driver::rated::with\(stars)::stars")
+            
+        } catch {
+            throw error
+        }
     }
+    
+
     
 }
 

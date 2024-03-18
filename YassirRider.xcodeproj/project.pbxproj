@@ -62,6 +62,7 @@
 		049E8CF52B9A888B00A61127 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E8CF42B9A888B00A61127 /* LottieView.swift */; };
 		049E8CF82B9A8A9F00A61127 /* progress-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 049E8CF72B9A8A9F00A61127 /* progress-animation.json */; };
 		04F5EF3A2BA6DBB200519152 /* BottomSheetUI in Frameworks */ = {isa = PBXBuildFile; productRef = 04F5EF392BA6DBB200519152 /* BottomSheetUI */; };
+		04F5EF3C2BA872B700519152 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5EF3B2BA872B700519152 /* RatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +115,7 @@
 		049E8CEF2B99C32800A61127 /* TripFlowScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFlowScreenModel.swift; sourceTree = "<group>"; };
 		049E8CF42B9A888B00A61127 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		049E8CF72B9A8A9F00A61127 /* progress-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "progress-animation.json"; sourceTree = "<group>"; };
+		04F5EF3B2BA872B700519152 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 				048ABEA92B9708E8007D3682 /* CircleBButton.swift */,
 				049E8CF42B9A888B00A61127 /* LottieView.swift */,
 				04770D6F2BA1B8ED00A71B52 /* NavigationButton.swift */,
+				04F5EF3B2BA872B700519152 /* RatingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				040F36802B9F431700252CC3 /* DriverRepo.swift in Sources */,
 				048ABEAD2B9708E8007D3682 /* CircleBButton.swift in Sources */,
 				049E8CF02B99C32800A61127 /* TripFlowScreenModel.swift in Sources */,
+				04F5EF3C2BA872B700519152 /* RatingView.swift in Sources */,
 				040F367E2B9F314B00252CC3 /* Driver.swift in Sources */,
 				048ABEB42B970CA7007D3682 /* LoginScreen.swift in Sources */,
 				048ABE9C2B970858007D3682 /* Text.swift in Sources */,

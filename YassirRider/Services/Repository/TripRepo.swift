@@ -51,11 +51,27 @@ class TripRepo: RealmManager {
         }
         
         guard let trip = realm.object(ofType: Trip.self, forPrimaryKey: id) else { return }
-        
+
         try  realm.write {
             trip.status = .canceled
             self.trip = nil
             debugPrint("Trip canceled:: ID:: \(id)")
+        }
+        
+    }
+    
+    @MainActor
+    func completeTrip(id: ObjectId) async throws {
+        guard let realm = RealmManager.shared.realm else {
+            throw NSError(domain: "Realm not initialized", code: 0, userInfo: nil)
+        }
+        
+        guard let trip = realm.object(ofType: Trip.self, forPrimaryKey: id) else { return }
+        
+        try  realm.write {
+            trip.status = .completed
+            self.trip = nil
+            debugPrint("Trip completed:: ID:: \(id)")
             
         }
     }
