@@ -11,6 +11,8 @@ import SwiftUI
 extension HomeScreen {
     class Model: ObservableObject {
         
+        @Published var tripStatus = TripRepo.sharedTrip.trip?.status
+        
         @Published var currentMarker = Marker(icon: "ic_user_location_pin", size: CGSize(width: 40, height: 50), marker: GMSMarker(position: LocationManager.shared.userLocation?.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)))
         @Published var markersList = [Marker]()
         @ObservedObject var locationManager = LocationManager.shared
@@ -23,7 +25,6 @@ extension HomeScreen {
                 currentMarker.marker.map?.animate(toZoom: 13.8)
             }
         }
-
         
     }
 }

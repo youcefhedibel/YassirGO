@@ -13,11 +13,9 @@ struct OpenRealmView: View {
     
     @ObservedObject var rider: Rider
 
+
     @AutoOpen(appId: app.appId, timeout: 2000) var autoOpen
     var body: some View {
-        
-        Text("OpenRealmView")
-
         switch autoOpen {
         case .connecting:
             ProgressView().onAppear{ print("connecting") }

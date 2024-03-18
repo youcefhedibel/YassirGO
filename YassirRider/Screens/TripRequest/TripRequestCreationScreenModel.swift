@@ -18,14 +18,13 @@ extension TripRequestCreation {
             Task {
                 do {
                     try await self.trip = TripRepo.sharedTrip.createTripRequest(pickup: pickup, dropoff: dropoff, price: price, status: status)
+                    
+                    try await DriverRepo.sharedDriver.asignTripToDriver(tripId: self.trip?._id ?? ObjectId("65f0"))
                 } catch {
                     print("Error creating trip: \(error)")
                 }
             }
         }
-        
-
-        
         
     }
 }

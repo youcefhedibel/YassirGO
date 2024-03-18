@@ -8,36 +8,58 @@
 import Foundation
 import RealmSwift
 
+
 class Trip: Object, ObjectKeyIdentifiable {
     
     @Persisted(primaryKey: true) var _id: ObjectId
     
-    @Persisted var pickup: String
-    
-    @Persisted var dropoff: String
+    @Persisted var status: TripStatus
     
     @Persisted var price: Int
     
-    @Persisted var  driver: String
+    @Persisted var pickup: String
     
-    @Persisted var status: TripStatus
+    @Persisted var dropOff: String
     
-    convenience init(pickup: String, dropoff: String, price: Int, driver: String, status: TripStatus) {
+    @Persisted var category: Trip.Category
+    
+    @Persisted var createdAt: Date
+    
+    @Persisted var updatedAt: Date
+    
+    @Persisted(originProperty: "trips") var rider: LinkingObjects<Rider>
+    
+    @Persisted(originProperty: "trips") var driver: LinkingObjects<Driver>
+    
+    convenience
+    init( pickup: String, dropOff: String, price: Int, status: TripStatus) {
         self.init()
         self._id = .generate()
         self.pickup = pickup
-        self.dropoff = dropoff
+        self.dropOff = dropOff
         self.price = price
-        self.driver = driver
+        self.createdAt = .now
+        self.updatedAt = .now
         self.status = status
+        self.category = .classic
     }
+
 }
 
 enum TripStatus: String, PersistableEnum {
     case pending
     case accepted
-    case arrivedDriver
+    case toClient
+    case arrivedClient
     case toDestination
-    case arrivedDestination 
+    case arrivedDestination
+    case canceled
+    case completed
 }
 
+extension Trip {
+    enum Category: String, PersistableEnum {
+        case classic
+        case business
+    }
+}

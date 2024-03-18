@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "bottomsheetui-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ayoubElhoucine/BottomSheetUI-iOS.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a60a978b963911f46b8d9cd82d17e0555013ee9f"
+      }
+    },
+    {
       "identity" : "ios-maps-sdk",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/googlemaps/ios-maps-sdk.git",

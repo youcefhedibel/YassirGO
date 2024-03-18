@@ -20,7 +20,7 @@ class RealmManager: ObservableObject {
         
         do {
             guard var flexSyncConfig = app.currentUser?.flexibleSyncConfiguration() else { return }
-            flexSyncConfig.objectTypes = [Rider.self, Trip.self]
+            flexSyncConfig.objectTypes = [Rider.self, Trip.self, Driver.self]
             flexSyncConfig.schemaVersion = 0
             
             var realm = try await Realm(configuration: flexSyncConfig)
@@ -32,7 +32,6 @@ class RealmManager: ObservableObject {
             self.realm = realm
             
             await RiderRepo.sharedRider.getRider()
-
             
         } catch {
             print("Failed to open realm: \(error.localizedDescription)")
@@ -51,6 +50,13 @@ class RealmManager: ObservableObject {
     func add(_ object: Object) {
         if let realm = self.realm {
             realm.add(object)
+        }
+    }
+    
+    @MainActor
+    func delete(_ object: Object) {
+        if let realm = self.realm {
+            realm.delete(object)
         }
     }
 }

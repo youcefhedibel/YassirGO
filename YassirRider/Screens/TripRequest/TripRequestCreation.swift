@@ -58,25 +58,32 @@ struct TripRequestCreation: View {
                             .padding()
                         Spacer()
                     
-                    NavigationLink {
-                        HomeScreen(rider: RiderRepo.sharedRider.rider!, tripRequestId: model.trip?._id, isShowingTripFlowSheet: true)
-                    } label: {
-                        YassirButton(disabled: disableButton, radius: 10) {
-                                Text("create trip").font(.white, .bold, 20)
-                        } action: {
-                            model.createTripRequest(pickup: pickup, dropoff: dropoff, price: Int.random(in: 200...1500), status: .pending)
+                    NavigationButton(disabled: disableButton, destination: {
+                        HomeScreen(rider: RiderRepo.sharedRider.rider!, isShowingTripFlowSheet: true)
+                    }, label: {
+                        HStack {
+                            Text("create trip")
+                                .font(.white, .bold, 20)
+                                .frame(maxWidth: .infinity, maxHeight: 55)
+                                .cornerRadius(10)
+                                .background(RoundedRectangle(cornerRadius: 10)
+                                .fill(disableButton ? Color.disabledButton : Color.primaryColor)
+                                .shadow(radius: 0.5))
+                                
                         }
-                    }
+                    }, action: {
+                        model.createTripRequest(pickup: pickup, dropoff: dropoff, price: Int.random(in: 200...1500), status: .pending)
+                    })
+                
                 }
                 .padding()
                 .padding(.top, .heightPer(per: 0.05))
                 .navigationBarBackButtonHidden(true)
                 .navigationBarItems(leading: BackButton(text: "Personaliser votre  course", textColor: .primaryText, font: .extraBold, fontSize: 18))
+                }
             }
         }
-        
-    }
 
-//#Preview {
-//    TripRequestCreation()
-//}
+#Preview {
+    TripRequestCreation()
+}

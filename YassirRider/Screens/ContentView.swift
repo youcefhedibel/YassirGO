@@ -17,7 +17,6 @@ struct ContentView: View {
 
                 if let rider = riderManager.rider,
                    nil != realmManager.realm {
-                    Text("CONTENT VIEW22")
                     OpenRealmView(rider: rider)
                 }
             }

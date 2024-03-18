@@ -12,5 +12,6 @@ extension Color {
     static let primaryText: Color = Color(red: 26/255, green: 2/255, blue: 68/255)
     static let secondaryText: Color = Color(red: 82/255, green: 73/255, blue: 119/255)
     static let disabledButton: Color = Color(red: 237/255, green: 234/255 ,blue: 241/255)
+    static let lightGreen: Color = Color(red: 64/255, green: 160/255 ,blue: 188/255)
 }
 

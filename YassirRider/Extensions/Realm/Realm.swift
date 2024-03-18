@@ -14,8 +14,9 @@ extension Realm {
         let subscriptions = self.subscriptions
         
         try await subscriptions.update {
-            subscriptions.checkAndSet(subKey: "driverTrip", model: Trip.self)
-            subscriptions.checkAndSet(subKey: "driverTripRider", model: Rider.self)
+            subscriptions.checkAndSet(subKey: "Trip", model: Trip.self)
+            subscriptions.checkAndSet(subKey: "Rider", model: Rider.self)
+            subscriptions.checkAndSet(subKey: "Driver", model: Driver.self)
         }
     }
 }

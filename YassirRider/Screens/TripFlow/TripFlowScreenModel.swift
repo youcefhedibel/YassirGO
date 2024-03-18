@@ -10,21 +10,16 @@ import RealmSwift
 
 extension  TripFlowScreen {
     class Model: ObservableObject {
-
-        @Published private(set) var trip: Trip?
-        
         
         @MainActor
-        func getTripRequest(id: ObjectId) {
-            do {
-                self.trip  = try TripRepo.sharedTrip.getTripRequest(id: id)
-
-                print("Trip FOUND! :: \(String(describing: trip))")
-                
-            } catch {
-                print("error:: no trip request found  for id \(id)")
+        func cancelTrip(tripID: ObjectId) {
+            Task {
+                do {
+                    try await TripRepo.sharedTrip.cancelTrip(id: tripID)
+                } catch {
+                    print("Error canceling trip: \(error)")
+                }
             }
         }
-        
     }
 }
