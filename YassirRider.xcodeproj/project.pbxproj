@@ -63,6 +63,8 @@
 		049E8CF82B9A8A9F00A61127 /* progress-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 049E8CF72B9A8A9F00A61127 /* progress-animation.json */; };
 		04F5EF3A2BA6DBB200519152 /* BottomSheetUI in Frameworks */ = {isa = PBXBuildFile; productRef = 04F5EF392BA6DBB200519152 /* BottomSheetUI */; };
 		04F5EF3C2BA872B700519152 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5EF3B2BA872B700519152 /* RatingView.swift */; };
+		04F5EF3F2BA8F64800519152 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5EF3E2BA8F64800519152 /* ProfileScreen.swift */; };
+		04F5EF412BA9A17900519152 /* ProfileScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5EF402BA9A17900519152 /* ProfileScreenModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +118,8 @@
 		049E8CF42B9A888B00A61127 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		049E8CF72B9A8A9F00A61127 /* progress-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "progress-animation.json"; sourceTree = "<group>"; };
 		04F5EF3B2BA872B700519152 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		04F5EF3E2BA8F64800519152 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		04F5EF402BA9A17900519152 /* ProfileScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +255,7 @@
 			children = (
 				048ABE762B9706DD007D3682 /* ContentView.swift */,
 				049E8CDF2B9722A600A61127 /* RealmCoordinatorView.swift */,
+				04F5EF3D2BA8F63100519152 /* ProfileScreen */,
 				049E8CEC2B99C2E100A61127 /* TripFlow */,
 				049E8CE52B985AA900A61127 /* TripRequest */,
 				048ABEB72B970F5A007D3682 /* Home */,
@@ -377,6 +382,15 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		04F5EF3D2BA8F63100519152 /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				04F5EF3E2BA8F64800519152 /* ProfileScreen.swift */,
+				04F5EF402BA9A17900519152 /* ProfileScreenModel.swift */,
+			);
+			path = ProfileScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -475,6 +489,7 @@
 				048ABEC22B97109B007D3682 /* MapViewControllerBridge.swift in Sources */,
 				040F36752B9DAE1300252CC3 /* SyncSubscriptionSet.swift in Sources */,
 				04770D702BA1B8ED00A71B52 /* NavigationButton.swift in Sources */,
+				04F5EF3F2BA8F64800519152 /* ProfileScreen.swift in Sources */,
 				048ABEAB2B9708E8007D3682 /* BackButton.swift in Sources */,
 				048ABEB92B970F69007D3682 /* HomeScreen.swift in Sources */,
 				049E8CE42B98567700A61127 /* Trip.swift in Sources */,
@@ -483,6 +498,7 @@
 				048ABEB62B970CD0007D3682 /* LoginScreenModel.swift in Sources */,
 				048ABEBB2B970F74007D3682 /* HomeScreenModel.swift in Sources */,
 				040F367C2B9DB0EA00252CC3 /* TripRepo.swift in Sources */,
+				04F5EF412BA9A17900519152 /* ProfileScreenModel.swift in Sources */,
 				048ABEAE2B9708E8007D3682 /* YassirButton.swift in Sources */,
 				049E8CE72B985AD900A61127 /* TripRequestCreation.swift in Sources */,
 				040F36802B9F431700252CC3 /* DriverRepo.swift in Sources */,
