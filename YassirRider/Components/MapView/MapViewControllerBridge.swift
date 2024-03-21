@@ -13,7 +13,7 @@ public struct Marker {
     var size: CGSize
     public let marker: GMSMarker
     
-    public init(icon: String, size: CGSize = CGSize(width: 24, height: 24), marker: GMSMarker) {
+    public init(icon: String, size: CGSize = CGSize(width: 20, height: 20), marker: GMSMarker) {
         self.icon = icon
         self.size = size
         self.marker = marker
@@ -35,7 +35,7 @@ public struct MapViewControllerBridge: UIViewControllerRepresentable {
     
     
     /// mapview initializer for homeView
-    public init(nearbyDrivers: [Marker], currentMarker: Marker, zoom: Float = 13.8) {
+    public init(nearbyDrivers: [Marker], currentMarker: Marker, zoom: Float = 12) {
         self.markers = nearbyDrivers
         self.currentMarker = currentMarker
         self.cameraPosition = currentMarker.marker.position

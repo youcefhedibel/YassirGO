@@ -12,8 +12,8 @@ import RealmSwift
 struct OpenRealmView: View {
     
     @ObservedObject var rider: Rider
-
-
+    
+    
     @AutoOpen(appId: app.appId, timeout: 2000) var autoOpen
     var body: some View {
         switch autoOpen {
@@ -21,7 +21,7 @@ struct OpenRealmView: View {
             ProgressView().onAppear{ print("connecting") }
             
         case .waitingForUser:
-            ProgressView("Waiting for user to log in...").onAppear{ print("waitingForUser") }
+            LoginScreen().onAppear{ print("waitingForUser") }
             
         case .open( _):
             HomeScreen(rider: rider).onAppear{ print("open") }

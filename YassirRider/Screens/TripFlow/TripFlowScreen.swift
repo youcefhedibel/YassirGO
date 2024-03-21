@@ -18,51 +18,51 @@ struct TripFlowScreen: View {
     @State private var  driverRating: Int = 3
     
     var body: some View {
-            VStack {
-                if trip.status ==  .pending {
-                    LottieView(name: "progress-animation", loopMode: .loop)
-                        .frame(height: 2)
-                }
-                    
-                        VStack(alignment: .leading) {
-                            switch trip.status {
-                            case .pending:
-                                Text("Looking for a Driver...")
-                                    .font(.primaryText, .bold, 22)
-                                Text("Veuillez patienter un instant, nous contactons le chauffeur le plus proche de vous.")
-                                    .font(.secondaryText, .regular, 14)
-                                    .multilineTextAlignment(.leading)
-                                tripInfo()
-                            case .accepted:
-                                acceptedComponent()
-                                tripInfo()
-                            case .toClient:
-                                tripStateText(text: "Votre  chauffeur est  en route")
-                                tripInfo()
-                            case .arrivedClient:
-                                tripStateText(text: "Votre chauffeur est  arrivé")
-                                tripInfo()
-                            case .toDestination:
-                                tripStateText(text: "En route vers la distination")
-                                tripInfo()
-                            case .arrivedDestination:
-                                arrivedToDestination()
-                            case .completed:
-                                completedTrip()
-                            case .canceled:
-                                Text("canceled")
-
-                            }
-                            Spacer().frame(height: CGFloat.heightPer(per: 0.02))
-                        }
-                        .padding(20)
-    
+        VStack {
+            if trip.status ==  .pending {
+                LottieView(name: "progress-animation", loopMode: .loop)
+                    .frame(height: 2)
             }
-            .background(.white)
             
+            VStack(alignment: .leading) {
+                switch trip.status {
+                case .pending:
+                    Text("Looking for a Driver...")
+                        .font(.primaryText, .bold, 22)
+                    Text("Veuillez patienter un instant, nous contactons le chauffeur le plus proche de vous.")
+                        .font(.secondaryText, .regular, 14)
+                        .multilineTextAlignment(.leading)
+                    tripInfo()
+                case .accepted:
+                    acceptedComponent()
+                    tripInfo()
+                case .toClient:
+                    tripStateText(text: "Votre  chauffeur est  en route")
+                    tripInfo()
+                case .arrivedClient:
+                    tripStateText(text: "Votre chauffeur est  arrivé")
+                    tripInfo()
+                case .toDestination:
+                    tripStateText(text: "En route vers la distination")
+                    tripInfo()
+                case .arrivedDestination:
+                    arrivedToDestination()
+                case .completed:
+                    completedTrip()
+                case .canceled:
+                    Text("canceled")
+                    
+                }
+                Spacer().frame(height: CGFloat.heightPer(per: 0.02))
+            }
+            .padding(20)
+            
+        }
+        .background(.white)
+        
     }
     
-     @ViewBuilder
+    @ViewBuilder
     private func acceptedComponent() -> some View {
         Text("Classique")
             .font(.primaryText, .medium, 22)
@@ -94,7 +94,7 @@ struct TripFlowScreen: View {
                         Text("4.5")
                             .font(.primaryText, .regular, 14)
                     }
-                 
+                    
                 }
                 Spacer()
                 
@@ -132,7 +132,7 @@ struct TripFlowScreen: View {
         .padding(8)
         .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.gray.opacity(0.5), lineWidth: 1))
         
-       
+        
     }
     
     @ViewBuilder
@@ -146,8 +146,8 @@ struct TripFlowScreen: View {
             Text(DriverRepo.sharedDriver.driver?.fullname ?? "test user")
                 .font(.primaryText, .regular, 18)
             
-          RatingView(rating: $driverRating)
-
+            RatingView(rating: $driverRating)
+            
             YassirButton(radius: 10) {
                 HStack{
                     Spacer()
@@ -160,7 +160,7 @@ struct TripFlowScreen: View {
                 callBack(false)
             }
             .padding(.top, 20)
-
+            
             Spacer().frame(height: CGFloat.heightPer(per: 0.03))
             
         }
@@ -182,8 +182,8 @@ struct TripFlowScreen: View {
                 Image("icon-dark-circle")
                     .resizable()
                     .frame(width: 14, height: 14)
-                }.padding(.top,2)
-                
+            }.padding(.top,2)
+            
             VStack(alignment:.leading, spacing:33) {
                 Text(trip.pickup)
                     .font(.primaryText, .regular, 14)
@@ -191,8 +191,8 @@ struct TripFlowScreen: View {
                 Text(trip.dropOff)
                     .font(.primaryText, .regular, 14)
                     .lineLimit(1)
-                }
             }
+        }
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 Text("Prix").font(.primaryText, .bold, 18)
@@ -233,12 +233,12 @@ struct TripFlowScreen: View {
                         .resizable()
                         .frame(width: 20, height: 20, alignment: .center)
                         .foregroundColor(.red)
-                        
+                    
                     Text("Annuler la course")
                         .font(.red, .regular, 14)
-                        
+                    
                 }
-               
+                
             }
         }.padding(.top, 10)
     }
@@ -289,7 +289,7 @@ struct TripFlowScreen: View {
             Spacer()
         }
         .padding(8)
-
+        
     }
     
 }

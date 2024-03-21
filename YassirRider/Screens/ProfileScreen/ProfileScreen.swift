@@ -9,22 +9,24 @@ import SwiftUI
 import RealmSwift
 
 struct ProfileScreen: View {
+    
+    @StateObject private var model = Model()
+    
+    @ObservedObject var rider: Rider
+    
     @State private var fullName = ""
     @State private var phoneNumber = ""
     @State private var id = ""
     @State private var email = ""
     
-    @ObservedRealmObject var rider: Rider
-    
-    @StateObject private var model = Model()
-    
     private var disableButton: Bool {
-        if (fullName.isEmpty || email.isEmpty) {
-            
+        if (self.fullName == rider.fullname && self.phoneNumber == rider.phoneNumber) {
+            return true
+        } else {
+            return false
         }
-        return true
     }
-
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack(alignment: .center) {
@@ -33,6 +35,7 @@ struct ProfileScreen: View {
                     .font(.primaryText, .medium, 18)
                 Spacer()
             }
+            
             HStack {
                 Spacer()
                 Image("avatar")
@@ -40,18 +43,17 @@ struct ProfileScreen: View {
                     .frame(width: 100, height: 100)
                 Spacer()
             }
-
             
-                Text("Informations")
-                    .font(.secondaryText, .medium, 18)
-
+            Text("Informations")
+                .font(.secondaryText, .medium, 18)
             
             VStack(alignment: .leading, spacing: 5) {
                 
-                profileTextFieldItem(text: "Fullname", bindingText: $email)
+                profileTextFieldItem(text: "Fullname", bindingText: $fullName, disabled:false)
                 
-                profileTextFieldItem(text: "Phone Number", bindingText: $phoneNumber)
-
+                profileTextFieldItem(text: "Phone Number", bindingText: $phoneNumber, disabled: false)
+                    .keyboardType(.numberPad)
+                
                 VStack(alignment: .leading) {
                     Text("ID")
                         .font(.secondaryText, .regular, 14)
@@ -70,22 +72,36 @@ struct ProfileScreen: View {
                         Button {
                             model.copyToClipBoard(text: id)
                         }
-                         label: {
-                            Image(systemName: "doc.on.doc.fill")
-                                 .resizable()
-                                 .frame(width: 20, height: 20)
-                                 .foregroundColor(.primaryColor)
-                        }
+                    label: {
+                        Image(systemName: "doc.on.doc.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.primaryColor)
+                    }
                     }
                 }
                 
-                profileTextFieldItem(text: "email", bindingText: $email)
+                profileTextFieldItem(text: "email", bindingText: $email, disabled: true)
+                
+                Button {
+                    model.logout()
+                } label: {
+                    HStack {
+                        Image(systemName: "rectangle.portrait.and.arrow.forward")
+                            .resizable()
+                            .frame(width: 20, height: 15)
+                            .foregroundColor(.primaryColor)
+                            .bold()
+                        Text("Loguut")
+                            .font(.primaryColor, .medium, 18)
+                    }.padding(.top)
+                }
                 
             }
             
             Spacer()
             
-            YassirButton(disabled: false, radius: 10) {
+            YassirButton(disabled: disableButton, radius: 10) {
                 HStack {
                     Spacer()
                     Text("Sauvegarder")
@@ -93,17 +109,27 @@ struct ProfileScreen: View {
                     Spacer()
                 }
             } action: {
-                /// TODO: implement save changes to realm
+                if !(self.fullName == rider.fullname) {
+                    model.updateProfile(fullName: self.fullName, phone: nil)
+                } else {
+                    model.updateProfile(fullName: nil, phone: self.phoneNumber)
+                }
             }
-
+            
         }.padding(.horizontal, 16)
-         .padding(.vertical, 50)
-         .edgesIgnoringSafeArea(.all)
-        
+            .padding(.vertical, 50)
+            .edgesIgnoringSafeArea(.all)
+            .navigationBarBackButtonHidden(true)
+            .onAppear{
+                self.fullName = rider.fullname
+                self.phoneNumber = rider.phoneNumber
+                self.id = app.currentUser?.id ?? ""
+                self.email = app.currentUser?.profile.email ?? ""
+            }
     }
     
     @ViewBuilder
-    private func profileTextFieldItem(text: String, bindingText: Binding<String>) -> some View {
+    private func profileTextFieldItem(text: String, bindingText: Binding<String>, disabled: Bool) -> some View {
         VStack(alignment: .leading) {
             Text(text)
                 .font(.secondaryText, .regular, 14)
@@ -111,15 +137,16 @@ struct ProfileScreen: View {
                 .font(Font.system(size: 18, design: .default))
                 .padding(10)
                 .disableAutocorrection(true)
+                .disabled(disabled)
                 .overlay {
                     RoundedRectangle(cornerRadius: 8)
                         .stroke(.secondary, lineWidth: 0.5)
                 }
         }
-
+        
     }
 }
 
 #Preview {
-    ProfileScreen(rider: Rider(id: "56789", fullname: "Youcef"))
+    ProfileScreen(rider: Rider(id: "ZERTYUIKJHG", fullname: "Test"))
 }

@@ -25,6 +25,22 @@ struct HomeScreen: View {
                 Mapview(currentMarker: model.currentMarker, markers: model.markersList)
                 ZStack {
                     VStack {
+                        HStack {
+                            Spacer()
+                            NavigationLink {
+                                ProfileScreen(rider: rider)
+                            } label: {
+                                ZStack {
+                                    Image("avatar")
+                                        .resizable()
+                                        .frame(width: 47, height: 47, alignment: .center)
+                                }
+                                .frame(width: 50, height: 50)
+                                .background(Circle().fill(.white).shadow(color: .black.opacity(0.1), radius: 5))
+                                .padding(16)
+                            }
+                            
+                        }
                         Spacer()
                         HStack {
                             Spacer()
@@ -58,12 +74,13 @@ struct HomeScreen: View {
                                 }
                             }
                             
-                            Text("\(rider.fullname)")
+                            Text("user: \(rider.fullname)")
+                                .font(.primaryText, .semiBold, 14)
                             
                         }.padding(.horizontal, 14)
-                        .padding(.vertical, 20)
-                        .padding(.bottom,30)
-                        .background(Color.white)
+                            .padding(.vertical, 20)
+                            .padding(.bottom,30)
+                            .background(Color.white)
                         
                         
                     }.padding(.top, CGFloat.heightPer(per: 0.06))
@@ -76,11 +93,11 @@ struct HomeScreen: View {
                 )
                 
             }.ignoresSafeArea()
-            .navigationBarBackButtonHidden(true)
+                .navigationBarBackButtonHidden(true)
         }
     }
     
-
+    
 }
 
 #Preview {

@@ -28,7 +28,7 @@ class RiderRepo: RealmManager {
         }
         
         self.rider = realm.object(ofType: Rider.self, forPrimaryKey: id)
-
+        
         debugPrint("rider::found::" + rider.debugDescription)
     }
     
@@ -48,7 +48,7 @@ class RiderRepo: RealmManager {
             self.rider = newRider
             RealmManager.shared.add(newRider)
             print("rider::created::\(newRider)")
-
+            
         }
     }
     
@@ -59,5 +59,21 @@ class RiderRepo: RealmManager {
             self.rider?.trips.append(trip)
         }
     }
+    
+    @MainActor
+    func updateProfile(fullName: String?, phone: String?) throws {
+        if let fullName = fullName {
+            try RealmManager.shared.write {
+                self.rider?.fullname = fullName
+            }
+        }
+        
+        if let phone = phone {
+            try  RealmManager.shared.write {
+                self.rider?.phoneNumber = phone
+            }
+        }
+    }
+    
     
 }

@@ -40,7 +40,7 @@ extension  TripFlowScreen {
                     try await DriverRepo.sharedDriver.rateDriver(stars: stars)
                 } catch {
                     print("Error::rating::driver::\(error)")
-
+                    
                 }
             }
         }

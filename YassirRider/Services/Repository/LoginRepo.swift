@@ -25,5 +25,19 @@ class LoginRepo: RealmManager {
         try await self.login(email: email, password: password)
         try await RiderRepo.sharedRider.createRider(fullname: fullname)
     }
+    
+    @MainActor
+    
+    func loggout() {
+        app.currentUser?.logOut { (error) in
+            if let error = error {
+                print("Error logging out: \(error.localizedDescription)")
+            } else {
+                print("User logged out successfully")
+            }
+        }
+    }
+    
+
 }
 
