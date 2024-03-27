@@ -184,7 +184,6 @@
 				049E8CDD2B97205B00A61127 /* AtlasConfig.plist */,
 				048ABE742B9706DD007D3682 /* YassirRiderApp.swift */,
 				048ABED22B971546007D3682 /* AppDelegate.swift */,
-				048ABEAF2B970BCB007D3682 /* Main */,
 				048ABEA62B9708C4007D3682 /* Components */,
 				048ABE972B97082E007D3682 /* Extensions */,
 				048ABE962B970828007D3682 /* Ressources */,
@@ -299,13 +298,6 @@
 				04F5EF3B2BA872B700519152 /* RatingView.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		048ABEAF2B970BCB007D3682 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		048ABEB22B970C91007D3682 /* Login */ = {

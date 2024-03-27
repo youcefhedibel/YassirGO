@@ -9,17 +9,16 @@ import Foundation
 
 extension LoginScreen {
     class Model: ObservableObject {
-        
-        private let loginManager = LoginRepo.sharedLogin
 
         @Published var isLoading: Bool = false
         
         @MainActor
         func login(email: String, password: String) {
-            self.isLoading = true
+            self.isLoading = true  
             Task {
                 do {
-                    try await loginManager.login(email: email, password: password)
+                    try await LoginRepo.sharedLogin.login(email: email, password: password)
+                    await RiderRepo.sharedRider.getRider()
                 }  catch {
                     self.isLoading = false
                     print("username or password incorrect")
@@ -32,7 +31,7 @@ extension LoginScreen {
             self.isLoading = true
             Task {
                 do {
-                    try await loginManager.signUp(email: email, password: password, fullname: fullname)
+                    try await LoginRepo.sharedLogin.signUp(email: email, password: password, fullname: fullname)
                     
                 } catch {
                     print("failed to sign up")

@@ -13,7 +13,7 @@ class TripRepo: RealmManager {
     
     static let sharedTrip = TripRepo()
     
-    @Published private(set) var trip: Trip?
+    @Published var trip: Trip?
     
     @MainActor
     func createTripRequest(pickup: String, dropoff: String, price: Int, status: TripStatus) async throws -> Trip {
@@ -41,6 +41,17 @@ class TripRepo: RealmManager {
     func  getTripRequest(id: ObjectId) throws {
         guard let trip = RealmManager.shared.realm?.object(ofType: Trip.self, forPrimaryKey: id) else { return }
         self.trip = trip
+    }
+    
+    @MainActor
+    func checkIsOntrip() throws {
+        if let lqstTrip = RiderRepo.sharedRider.rider?.trips.last {
+            
+        }
+        
+        
+        
+        
     }
     
     @MainActor

@@ -13,7 +13,6 @@ struct OpenRealmView: View {
     
     @ObservedObject var rider: Rider
     
-    
     @AutoOpen(appId: app.appId, timeout: 2000) var autoOpen
     var body: some View {
         switch autoOpen {
@@ -24,7 +23,7 @@ struct OpenRealmView: View {
             LoginScreen().onAppear{ print("waitingForUser") }
             
         case .open( _):
-            HomeScreen(rider: rider).onAppear{ print("open") }
+                HomeScreen(rider: rider).onAppear{ print("open") }
             
         case .progress(let progress):
             ProgressView(progress).onAppear{ print("progress") }

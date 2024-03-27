@@ -19,6 +19,8 @@ var app: App {
     )
 }
 
+
+
 fileprivate class ConfigManager {
     
     struct AppConfig {
@@ -44,7 +46,7 @@ fileprivate class ConfigManager {
         let atlasConfigPropertyList = try! PropertyListSerialization.propertyList(from: data, format: nil) as! [String: Any]
         let appId = atlasConfigPropertyList["appId"]! as! String
         let baseUrl = atlasConfigPropertyList["baseUrl"]! as! String
-        
+
         return AppConfig(appId: appId, baseUrl: baseUrl)
     }
 }

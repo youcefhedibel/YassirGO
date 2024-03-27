@@ -71,11 +71,11 @@ struct HomeScreen: View {
                                 .overlay {
                                     RoundedRectangle(cornerRadius: 25)
                                         .stroke(Color.primaryText, lineWidth: 1.2)
-                                }
-                            }
-                            
-                            Text("user: \(rider.fullname)")
-                                .font(.primaryText, .semiBold, 14)
+                                              }
+                                          }
+                                          
+                                          Text("user: \(rider.fullname)")
+                                              .font(.primaryText, .semiBold, 14)
                             
                         }.padding(.horizontal, 14)
                             .padding(.vertical, 20)

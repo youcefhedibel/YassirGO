@@ -10,8 +10,8 @@ import SwiftUI
 
 @available(iOS 13.0, *)
 public extension Text {
-    func font(_ color: Color, _ arbinFont: Font.YassirRubik, _ size: CGFloat) -> Text {
-        switch arbinFont {
+    func font(_ color: Color, _ yFont: Font.YassirRubik, _ size: CGFloat) -> Text {
+        switch yFont {
         case .regular:
             return self
                 .font(.custom(Font.YassirRubik.regular.rawValue, size: size))
