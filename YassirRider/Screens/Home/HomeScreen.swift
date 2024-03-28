@@ -17,6 +17,9 @@ struct HomeScreen: View {
     
     @ObservedObject var rider: Rider
     
+    @ObservedRealmObject var trip = (TripRepo.sharedTrip.trip ?? Trip())
+
+        
     @State var isShowingTripFlowSheet: Bool = false
     
     var body: some View {
@@ -26,6 +29,16 @@ struct HomeScreen: View {
                 ZStack {
                     VStack {
                         HStack {
+                            switch trip.status {
+                            case .toClient:
+                                tripStateText(text: "Votre  chauffeur est  en route")
+                            case .arrivedClient:
+                                tripStateText(text: "Votre chauffeur est  arrivé")
+                            case .toDestination:
+                                tripStateText(text: "En route vers la distination")
+                                
+                            default: EmptyView()
+                            }
                             Spacer()
                             NavigationLink {
                                 ProfileScreen(rider: rider)
@@ -93,11 +106,30 @@ struct HomeScreen: View {
                 )
                 
             }.ignoresSafeArea()
-                .navigationBarBackButtonHidden(true)
+             .navigationBarBackButtonHidden(true)
+             .onAppear {
+                 isShowingTripFlowSheet = model.checkIsOnTrip()
+             }
         }
     }
     
-    
+    @ViewBuilder
+    func tripStateText(text: String) -> some View {
+        HStack {
+            Image("icon-home")
+                .resizable()
+                .frame(width: 30, height: 30)
+            Spacer()
+            Text(text)
+                .font(.primaryText, .regular, 12)
+            Spacer()
+        }
+        .padding(8)
+        .background(.white)
+        .cornerRadius(16)
+        .padding(8)
+        
+    }
 }
 
 #Preview {

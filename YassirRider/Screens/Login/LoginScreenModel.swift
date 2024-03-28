@@ -14,7 +14,7 @@ extension LoginScreen {
         
         @MainActor
         func login(email: String, password: String) {
-            self.isLoading = true  
+            self.isLoading = true
             Task {
                 do {
                     try await LoginRepo.sharedLogin.login(email: email, password: password)

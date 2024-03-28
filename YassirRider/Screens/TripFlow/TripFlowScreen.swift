@@ -44,6 +44,7 @@ struct TripFlowScreen: View {
                     tripInfo()
                 case .toDestination:
                     tripStateText(text: "En route vers la distination")
+
                     tripInfo()
                 case .arrivedDestination:
                     arrivedToDestination()
@@ -244,6 +245,21 @@ struct TripFlowScreen: View {
     }
     
     @ViewBuilder
+    func tripStateText(text: String) -> some View {
+        HStack {
+            Image("icon-home")
+                .resizable()
+                .frame(width: 30, height: 30)
+            Spacer()
+            Text(text)
+                .font(.primaryText, .medium, 18)
+            Spacer()
+        }
+        .padding(8)
+        
+    }
+    
+    @ViewBuilder
     private func arrivedToDestination() -> some View {
         VStack(spacing: 12) {
             Image("icon-flag")
@@ -278,19 +294,7 @@ struct TripFlowScreen: View {
         }
     }
     
-    @ViewBuilder
-    private func tripStateText(text: String) -> some View {
-        HStack {
-            Image("icon-home")
-                .resizable()
-                .frame(width: 30, height: 30)
-            Spacer()
-            Text(text).font(.black, .semiBold, 16)
-            Spacer()
-        }
-        .padding(8)
-        
-    }
+
     
 }
 

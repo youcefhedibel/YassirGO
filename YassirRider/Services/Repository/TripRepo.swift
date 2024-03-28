@@ -44,17 +44,6 @@ class TripRepo: RealmManager {
     }
     
     @MainActor
-    func checkIsOntrip() throws {
-        if let lqstTrip = RiderRepo.sharedRider.rider?.trips.last {
-            
-        }
-        
-        
-        
-        
-    }
-    
-    @MainActor
     func cancelTrip(id: ObjectId) async throws {
         
         guard let realm = RealmManager.shared.realm else {
@@ -85,6 +74,23 @@ class TripRepo: RealmManager {
             debugPrint("Trip completed:: ID:: \(id)")
             
         }
+    }
+    
+    @MainActor
+    func checkisOnTrip() throws -> Bool {
+        guard let realm = RealmManager.shared.realm else {
+            throw NSError(domain: "Realm not initialized", code: 0, userInfo: nil)
+        }
+        
+        let lastTrip = realm.objects(Trip.self).last
+        
+        if !(lastTrip?.status == .canceled || lastTrip?.status == .completed || lastTrip?.status == nil) {
+            self.trip = lastTrip
+            return true
+        } else {
+            return false
+        }
+        
     }
 
     
